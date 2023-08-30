@@ -3,26 +3,44 @@ const arr2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', '
 const arr3 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 const arr4 = ['!', '@', '#', '$', '%', '&', '*']
 
+
 const slider = document.getElementById("slider-line")
 const num = document.getElementById('num')
 
+const number = document.getElementById('check-1')
+const lowerCaseLetters = document.getElementById('check-2')
+const upperCaseLetters = document.getElementById('check-3')
+const specialCharacters = document.getElementById('check-4')
+
 const generateBtn = document.querySelector('.btn-generate')
 
+const elemnts = [
+  {
+    checkbox: number,
+    data: arr1
+  },
+  {
+    checkbox: lowerCaseLetters,
+    data: arr2
+  },
+  {
+    checkbox: upperCaseLetters,
+    data: arr3
+  },
+  {
+    checkbox: specialCharacters,
+    data: arr4
+  }
+]
 generateBtn.addEventListener('click', () => {
   let emptyArr = []
 
-  if (document.getElementById('check-1').checked) {
-    emptyArr = emptyArr.concat(arr1)
-  }
-  if (document.getElementById('check-2').checked) {
-    emptyArr = emptyArr.concat(arr3)
-  }
-  if (document.getElementById('check-3').checked) {
-    emptyArr = emptyArr.concat(arr2)
-  }
-  if (document.getElementById('check-4').checked) {
-    emptyArr = emptyArr.concat(arr4)
-  }
+  elemnts.forEach(element => {
+    if (element.checkbox.checked) {
+      emptyArr = emptyArr.concat(element.data)
+    }
+  })
+
   emptyArr.sort(shuffle)
   document.getElementById('out').innerHTML = ''
   for (let k = 0; k < 6; k++) {
