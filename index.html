@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./image/favicon.ico">
+  <link rel="icon" href="./image/favicon-16x16.png">
+  <link rel="icon" href="./image/favicon-32x32.png">
+  <link rel="stylesheet" href="./pages/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Generator pass</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <h1 class="header__title">Генератор паролей</h1>
+  </header>
+  <div class="main">
+    <form>
+      <div class="slider">
+        <label for="slider-line" class="slider__title">Количество символов(<span id="num"
+            class="slider__num">10</span>)</label>
+        <input type="range" id="slider-line" value="10" step="1" max="50">
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check-1">
+        <label class="form-check-label" for="exampleCheck1">Цифры</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check-2">
+        <label class="form-check-label" for="exampleCheck1">Прописные буквы</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check-3">
+        <label class="form-check-label" for="exampleCheck1">Строчные буквы</label>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="check-4">
+        <label class="form-check-label" for="exampleCheck1">Спец. символы</label>
+      </div>
+      <button type="button" class="btn btn-primary btn-generate">Сгенирировать</button>
+    </form>
+    <div id="out">
+    </div>
+
+  </div>
+  <script src="./js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
