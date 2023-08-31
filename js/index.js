@@ -14,6 +14,8 @@ const specialCharacters = document.getElementById('check-4')
 
 const generateBtn = document.querySelector('.btn-generate')
 
+let amountPass = 6
+
 const elemnts = [
   {
     checkbox: number,
@@ -41,30 +43,18 @@ generateBtn.addEventListener('click', () => {
     }
   })
 
-  emptyArr.sort(shuffle)
   document.getElementById('out').innerHTML = ''
-  for (let k = 0; k < 6; k++) {
+  for (let k = 0; k < amountPass; k++) {
     let pass = ''
     for (let i = 0; i < slider.value; i++) {
       pass += emptyArr[randomInteger(0, emptyArr.length - 1)]
     }
-    // shuffle(emptyArr)
-    // console.log(shuffle(emptyArr));
+
     document.getElementById('out').innerHTML += '<p>' + pass + '</p>'
   }
 })
 slider.oninput = function () {
   num.textContent = slider.value;
-}
-
-// function shuffle(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[j]] = [array[j], array[i]];
-//   }
-// }
-function shuffle(a, b) {
-  return Math.random() - 0.5;
 }
 
 function randomInteger(min, max) {
